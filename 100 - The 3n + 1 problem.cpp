@@ -25,11 +25,11 @@ int main()
             n=1;
             for(k=p;k!=1;k=k){
                 if(k%2==0){
-					k = k / 2;
-				}
+		            k = k / 2;
+		        }
                 else{
                     k = 3 * k + 1;
-				}
+		        }
                 n++;
            }
            if(n>=m)
