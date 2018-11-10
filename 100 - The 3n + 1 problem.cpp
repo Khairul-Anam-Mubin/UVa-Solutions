@@ -32,9 +32,8 @@ int main()
 				}
                 n++;
            }
-           if(n>=m){
+           if(n>=m)
             m=n;
-           }
         }
         printf("%d\n",m);
     }
