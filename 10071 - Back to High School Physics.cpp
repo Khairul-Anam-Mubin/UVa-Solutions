@@ -1,3 +1,8 @@
+/*** Khairul Anam Mubin 
+     Bangladesh University of Business and Technology,
+     Department of CSE.
+***/
+
 #include <bits/stdc++.h>
 
 int main()
@@ -8,6 +13,5 @@ int main()
     {
         printf("%d\n",2*v*t);
     }
-
     return 0;
 }
