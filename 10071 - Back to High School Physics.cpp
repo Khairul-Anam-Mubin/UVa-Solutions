@@ -1,6 +1,7 @@
-/***    Author: Khairul Anam Mubin 
-**      Bangladesh University of Business and Technology,
-**      Dept. of CSE.
+/***
+**     Author: Khairul Anam Mubin
+**     Bangladesh University of Business and Technology,
+**     Dept. of CSE.
 ***/
 
 #include <bits/stdc++.h>
