@@ -34,7 +34,7 @@ int main()
             }
         }
         //cout << c << endl;
-        if(c==len1 && flag==1)
+        if(c==len1)
             printf("Yes\n");
         else
             printf("No\n");
