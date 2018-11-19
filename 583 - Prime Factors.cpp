@@ -79,6 +79,6 @@ void sieve()
     a[1]=1;
     for(i=2;i<=n;i++)
         if(a[i]==0)
-            for(j=i*i;j<=Max-1;j++)
+            for(j=i*i;j<=Max-1;j+=i)
                 a[j]=1;
 }
