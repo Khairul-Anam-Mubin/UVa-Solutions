@@ -8,48 +8,38 @@
 
 using namespace std;
 
-int prime(int x);
+#define mx 2000001
+void sieve();
+bool a[mx];
 
 int main()
 {
-    long int i,j,k,n,s,c;
-
-    while(scanf("%ld",&n)==1 && n!=0)
+    sieve();
+    int n,i,x;
+    while(scanf("%d",&n)==1 && n!=0)
     {
-        for(i=n-1;i>=(n/2);i--){
-            if(prime(i)){
-                k=n-i;
-                if(prime(k)){
-                    break;
-                }
+        x=n/2;
+        for(i=2;i<=x;i++){
+            if(a[i]==false && a[n-i]==false){
+                printf("%d = %d + %d\n",n,i,n-i);
+                break;
             }
-        }
-        if(i>k){
-            printf("%ld = %ld + %ld\n",n,k,i);
-        }
-        else if(i<k){
-            printf("%ld = %ld + %ld\n",n,i,k);
-        }
-        else{
-            printf("%ld = %ld + %ld\n",n,k,i);
         }
     }
     return 0;
 }
-int prime(int x)
+void sieve()
 {
-    int i,n=sqrt(x);
-
-    if(x==1)
-        return 0;
-    if(x==2)
-        return 1;
-    if(x%2==0)
-        return 0;
-    for(i=3;i<=n;i+=2){
-        if(x%i==0){
-           return 0;
+    int i,j,sq;
+    sq=sqrt(mx);
+    a[0]=true;
+    a[1]=true;
+    for(i=2;i<=sq;i++){
+        if(a[i]==false){
+            for(j=i*i;j<mx;j+=i){
+                a[j]=true;
+            }
         }
     }
-    return 1;
+
 }
