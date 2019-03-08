@@ -59,23 +59,21 @@ string BigintSum(string str1,string str2)
     string sum;
 
     for(int i=len1-1, j=len2-1; i>=0 ; i--, j--){
+        int x;
         if(n){
-            int x = str1[i] - '0' + str2[j] - '0' + carry;
-            carry=x/10;
-            x=x%10;
-            sum.push_back(x+'0');
+            x = str1[i] - '0' + str2[j] - '0' + carry;
             n--;
         }
         else{
-            int x = str1[i] - '0' + carry;
-            carry=x/10;
-            x=x%10;
-            sum.push_back(x+'0');
+            x = str1[i] - '0' + carry;
         }
+        carry=x/10;
+        x=x%10;
+        sum.push_back(x+'0');
     }
     if(carry)
         sum.push_back(carry+'0');
     reverse(sum.begin(),sum.end());
-    
+
     return sum;
 }
