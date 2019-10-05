@@ -121,3 +121,35 @@ int main() {
     }
     return 0 ;
 }
+
+// Faster version as pre_calculating phi
+
+#define mx 50000
+int phi[mx + 10] ;
+
+void PreCalPhi() {
+    phi[1] = 1 ;
+    for(int i = 2 ; i <= mx ; i++) {
+        if(phi[i] == 0) {
+            phi[i] = i - 1 ;
+            for(int j = i + i ; j <= mx ; j += i) {
+                if(phi[j] == 0) 
+                    phi[j] = j ;
+                phi[j] = phi[j] - (phi[j] / i) ;
+            }
+        }
+    }
+}
+int main() {
+    PreCalPhi() ;
+    int dp[mx + 10] ;
+    dp[1] = 1 ;
+    for(int i = 2 ; i <= mx ; i++) {
+        dp[i] = phi[i] * 2 + dp[i - 1] ;
+    }
+    int n ;
+    while(scanf("%d",&n) == 1 && n) {
+        printf("%d\n",dp[n]) ;
+    }
+    return 0 ;
+}
