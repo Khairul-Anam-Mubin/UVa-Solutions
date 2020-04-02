@@ -8,8 +8,8 @@
  
 #include <bits/stdc++.h>
 using namespace std;
-
-
+ 
+ 
 #define F            first
 #define S            second  
 #define PB           push_back
@@ -55,7 +55,7 @@ vector<string> Linetostr(string str){string s; vector <string> v ;istringstream 
 typedef unsigned long long ull;
 typedef long long ll;
 const double pi = 2 * acos(0.0);
-
+ 
 #define MOD 998244353
 #define INF9 2147483647
 #define INF18 9223372036854775806
@@ -63,24 +63,24 @@ const double pi = 2 * acos(0.0);
 #define GRAY 1
 #define BLACK 2
 #define eps 1e-8
-
+ 
 //int dx[] = {1, 1, 1, -1, -1, -1, 0, 0};
 //int dy[] = {0, -1, 1, 0, -1, 1, -1, 1};
-
+ 
 //int dx[] = {0 , 0 , -1 , 1} ; // right , left , forward , backward
 //int dy[] = {1 , -1 , 0 , 0} ; 
-
+ 
 //scanf(" %[^\n]", str) ;
-
+ 
 struct DSU {
 	vector <int> parent , siz;
 	vector <int> sum;
-	
+ 
 	DSU(int mxN) {
 		mxN <<= 1;
 		parent.resize(mxN + 1);
 		siz.resize(mxN + 1);
-
+ 
 		sum.resize(mxN + 1);
 	}
 	void Makeset(int n) {
@@ -102,7 +102,7 @@ struct DSU {
 		if (u != v) {
 			parent[u] = v ;
 			siz[v] += siz[u];
-			
+ 
 			sum[v] += sum[u];
 		}
 	}
