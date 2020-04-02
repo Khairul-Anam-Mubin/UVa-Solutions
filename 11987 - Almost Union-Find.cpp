@@ -136,7 +136,7 @@ int main() {
 			int q; cin >> q;
 			if (q == 1) {
 				int u , v; cin >> u >> v;
-				dsu.Union(u , v);   
+				dsu.Union(u , v);
 			} else if (q == 2) {
 				int u , v; cin >> u >> v;
 				dsu.Move(u , v);
